@@ -33,7 +33,7 @@ const MovieList = () => {
             <section className="banner  ">
                <Slider data={data?.pages[0]} />
             </section>
-            <div className="pt-8 px-4 max-w-7xl mx-auto">
+            <div className="pt-8 px-4">
                 <input
                     type="text"
                     placeholder="Buscar película de Marvel..."
