@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+body{
+    background-color: #131313;
+    overflow-x: hidden;
+    width: 100%;
+}
+.movie-swiper {
+    padding: 1rem 0; /* Espacio para que el hover scale no se corte arriba/abajo */
+    margin: -1rem 0;
+}
+.banner{
+    padding-top: 30px;
+}
+:root {
+    --swiper-navigation-color: #c70000; /* Rojo Marvel */
+    --swiper-navigation-size: 24px;
+}
+
+/* Personalización de flechas para MovieSection */
+.movie-swiper .swiper-button-next,
+.movie-swiper .swiper-button-prev,
+.slider .swiper-button-next,
+.slider .swiper-button-prev {
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    display: none !important; /* Ocultas por defecto (móvil) */
+}
+
+@media (min-width: 768px) {
+    .movie-swiper .swiper-button-next,
+    .movie-swiper .swiper-button-prev,
+    .slider .swiper-button-next,
+    .slider .swiper-button-prev {
+        display: flex !important; /* Visibles a partir de md */
+    }
+}
+
+.movie-swiper .swiper-button-next:hover,
+.movie-swiper .swiper-button-prev:hover {
+    background: rgba(199, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.movie-swiper .swiper-button-next::after,
+.movie-swiper .swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
